@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaveamento · Anteiku Xtreino</title>
+  <meta name="theme-color" content="#09090b">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;700;800&family=Shippori+Mincho:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="pg-chave">
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main class="chave-pg">
+    <a class="voltar reveal" href="index.html">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M15 5 8 12l7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Voltar
+    </a>
+
+    <header class="ed-head reveal">
+      <span class="ed-jp">対戦表</span>
+      <h1>Chaveamento</h1>
+      <p>Mata-mata: clique no time que venceu o confronto e ele avança pra próxima fase. Clique de novo pra desfazer. Pra mudar os confrontos, segure um time da primeira fase e arraste pra outro lugar. No fim, quem perdeu nas semifinais disputa o 3º lugar.</p>
+    </header>
+
+    <div class="ch-controles reveal" id="controles">
+      <button type="button" class="btn primario" data-act="sortear">Sortear chaveamento</button>
+      <button type="button" class="btn fantasma" data-act="ordem">Usar ordem dos times</button>
+      <button type="button" class="btn fantasma" data-act="zerar">Zerar resultados</button>
+      <span class="ch-info" id="info"></span>
+    </div>
+
+    <div class="ch-aviso" id="aviso" hidden></div>
+
+    <div class="ch-scroll reveal" id="scroll">
+      <div class="ch-bracket" id="bracket"></div>
+    </div>
+
+    <div class="ch-extras" id="extras"></div>
+  </main>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="data/xtreino.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/arrastar.js"></script>
+  <script src="js/chaveamento.js"></script>
+</body>
+</html>

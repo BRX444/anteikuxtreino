@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar times · Anteiku Xtreino</title>
+  <meta name="theme-color" content="#09090b">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;700;800&family=Shippori+Mincho:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="pg-editar">
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main class="editor">
+    <a class="voltar reveal" href="index.html">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M15 5 8 12l7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Voltar
+    </a>
+
+    <header class="ed-head reveal">
+      <span class="ed-jp">部隊</span>
+      <h1>Editar times</h1>
+      <p>Adicione, edite ou remova os times. Pra mudar a ordem, segure um card e arraste. Tudo fica salvo automaticamente neste navegador.</p>
+    </header>
+
+    <form id="formTime" class="ed-form reveal" autocomplete="off" novalidate>
+      <div class="ed-form-topo">
+        <h2 id="formTitulo">Novo time</h2>
+        <span class="ed-badge" id="formBadge" hidden>Editando</span>
+      </div>
+      <div class="ed-linha">
+        <label>Nome do time<input name="nome" maxlength="40" placeholder="Ex.: Lua Vermelha"></label>
+        <label><span>Tag <small>até 6</small></span><input name="tag" maxlength="6" placeholder="LUA"></label>
+      </div>
+      <p class="ed-rotulo">Jogadores</p>
+      <div class="ed-jog">
+        <input name="j1" maxlength="24" placeholder="Jogador 1">
+        <input name="j2" maxlength="24" placeholder="Jogador 2">
+        <input name="j3" maxlength="24" placeholder="Jogador 3">
+        <input name="j4" maxlength="24" placeholder="Jogador 4">
+        <input name="j5" maxlength="24" placeholder="Reserva (opcional)">
+      </div>
+      <div class="ed-acoes">
+        <button type="submit" class="btn primario" id="btnSalvar">Adicionar time</button>
+        <button type="button" class="btn fantasma" id="btnCancelar" hidden>Cancelar</button>
+      </div>
+    </form>
+
+    <div class="ed-lista-topo reveal">
+      <h2>Times <span id="qtd">00</span></h2>
+      <label class="ed-busca">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input type="search" id="busca" placeholder="Buscar time ou jogador" aria-label="Buscar time ou jogador">
+      </label>
+    </div>
+    <div class="ed-lista" id="lista"></div>
+  </main>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="data/xtreino.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/arrastar.js"></script>
+  <script src="js/times.js"></script>
+</body>
+</html>
